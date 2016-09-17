@@ -1,6 +1,5 @@
 CC	=gcc
-CFLAGS	=-O -Wall -fstrength-reduce  -fomit-frame-pointer \
-	-fno-stack-protector -finline-functions -nostdinc -I../include
+CFLAGS	=-O -Wall -fstrength-reduce  -fomit-frame-pointer -finline-functions -nostdinc -I../include
 AS	=as
 AR	=ar
 LD	=ld
@@ -23,7 +22,7 @@ mm.o: $(OBJS)
 	$(LD) -r -o mm.o $(OBJS)
 
 clean:
-	rm -f core *.o *.a tmp_make
+	rm -f core *.o *.a tmp_make *~
 	for i in *.c;do rm -f `basename $$i .c`.s;done
 
 dep:

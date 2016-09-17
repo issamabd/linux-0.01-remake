@@ -2,8 +2,7 @@ AR	=ar
 AS	=as
 CC	=gcc
 LD	=ld
-CFLAGS	=-Wall -O -fstrength-reduce -fomit-frame-pointer \
-	 -fno-stack-protector -nostdinc -I../include
+CFLAGS	=-Wall -O -fstrength-reduce -fomit-frame-pointer -nostdinc -I../include
 CPP	=gcc -E -nostdinc -I../include
 
 .c.s:
@@ -23,7 +22,7 @@ fs.o: $(OBJS)
 	$(LD) -r -o fs.o $(OBJS)
 
 clean:
-	rm -f core *.o *.a tmp_make
+	rm -f core *.o *.a tmp_make *~
 	for i in *.c;do rm -f `basename $$i .c`.s;done
 
 dep:

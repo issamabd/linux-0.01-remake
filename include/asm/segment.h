@@ -24,7 +24,7 @@ extern inline unsigned long get_fs_long(const unsigned long *addr)
 
 extern inline void put_fs_byte(char val,char *addr)
 {
-__asm__ ("movb %0,%%fs:%1"::"r" (val),"m" (*addr));
+__asm__ ("movb %0,%%fs:%1"::"q" (val),"m" (*addr));
 }
 
 extern inline void put_fs_word(short val,short * addr)

@@ -12,7 +12,7 @@ LD	=ld
 LDFLAGS	=-s -x
 CC	=gcc
 CFLAGS	=-Wall -O -fstrength-reduce -fomit-frame-pointer  \
-	-finline-functions -fno-stack-protector -nostdinc -I../include
+	-finline-functions -nostdinc -I../include
 CPP	=gcc -E -nostdinc -I../include
 
 .c.s:
@@ -34,7 +34,7 @@ kernel.o: $(OBJS)
 	sync
 
 clean:
-	rm -f core *.o *.a tmp_make
+	rm -f core *.o *.a tmp_make *~
 	for i in *.c;do rm -f `basename $$i .c`.s;done
 
 dep:

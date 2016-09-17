@@ -12,7 +12,7 @@ AS	=as
 LD	=ld
 LDFLAGS	=-s -x -M -Ttext 0 -e startup_32
 CC	=gcc
-CFLAGS	=-Wall -O -fstrength-reduce -fomit-frame-pointer -fno-stack-protector 
+CFLAGS	=-Wall -O -fstrength-reduce -fomit-frame-pointer 
 CPP	=gcc -E -nostdinc -Iinclude
 
 ARCHIVES=kernel/kernel.o mm/mm.o fs/fs.o
@@ -69,7 +69,7 @@ boot/boot:	boot/boot.s tools/system
 	$(LD86) -s -o boot/boot boot/boot.o
 
 clean:
-	rm -f Image System.map tmp_make boot/boot core
+	rm -f Image System.map tmp_make boot/boot core *~
 	rm -f init/*.o boot/*.o tools/system tools/build tools/system.bin
 	(cd mm;make clean)
 	(cd fs;make clean)
