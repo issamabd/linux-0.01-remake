@@ -1,8 +1,7 @@
 linux-0.01-remake
 -----------------
 
-This is a great work by Abdel Benamrouche, a french dude - as he introduced him self :) to
-compile linux-0.01, the first linux release, using gcc 4.x and run it on modern computers.
+Compile & run linux-0.01, the first linux release, using gcc 4.x and run it on modern computers.
 
 You can get more informations about the work at: http://draconux.free.fr/os_dev/linux0.01_news.html
 
